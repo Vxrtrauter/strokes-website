@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import LocalFont from "next/font/local";
 import { ThemeProvider } from "@/components/contexts/theme-provider";
 import { Navbar } from "@/components/navbar";
 import { GeistSans } from "geist/font/sans";
@@ -7,11 +8,57 @@ import { Footer } from "@/components/footer";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  title: "AriaDocs - Template",
-  metadataBase: new URL("https://ariadocs.vercel.app/"),
+  title: {
+    default: "Strokes",
+    template: "Strokes | %s",
+  },
   description:
-    "This comprehensive documentation template, crafted with Next.js and available as open-source, delivers a sleek and responsive design, tailored to meet all your project documentation requirements.",
+    "A free and open-sourced archive of Minecraft Plugins and Mods",
+  openGraph: {
+    title: "Strokes",
+    description:
+      "A free and open-sourced archive of Minecraft Plugins and Mods",
+    url: "https://www.strokesfiles.com",
+    siteName: "strokesfiles.com",
+    images: [
+      {
+        url: "https://github.com/WarFiN123/docs-bugattipvp/blob/main/app/opengraph-image.png?raw=true",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large" as const,
+      "max-snippet": -1,
+    },
+  },
+  twitter: {
+    title: "Strokes",
+    card: "summary_large_image",
+    description:
+      "A free and open-sourced archive of Minecraft Plugins and Mods",
+    images: [
+      "https://github.com/WarFiN123/docs-bugattipvp/blob/main/app/opengraph-image.png?raw=true",
+    ],
+  },
+  icons: {
+    shortcut: "/favicon.ico",
+  },
 };
+
+const Against = LocalFont({
+  src: "../public/fonts/Against.ttf",
+  variable: "--font-against",
+});
 
 export default function RootLayout({
   children,
@@ -19,9 +66,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={[Against.variable].join(" ")}
+    >
       <body
-        className={`${GeistSans.variable} ${GeistMono.variable} font-regular antialiased`}
+        className={`${GeistSans.variable} ${GeistMono.variable} font-regular`}
         suppressHydrationWarning
       >
         <ThemeProvider

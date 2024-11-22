@@ -1,0 +1,101 @@
+---
+title: ⚡ BotSentry ⚡
+description: Blocking all booting sites and programs, most extensive API and good reputation!
+---
+
+<Tabs defaultValue="main" className="pt-5 pb-1">
+  <TabsList>
+    <TabsTrigger value="main">Info</TabsTrigger>
+    <TabsTrigger value="download">Download</TabsTrigger>
+  </TabsList>
+  <TabsContent value="main">
+    ## Why Choose BotSentry
+    Unlike other "**AntiBot**" plugins, we achieved creating a viable performant plugin that is capable of handling a **lot of connections per second,** filtering them, blacklisting them in seconds, while your **players** are **allowed** to join the server.
+When an attack starts, if the attack is so slow that the AntiBot won't even enable, it will just perform slow-checks on bots, kicking them and blacklisting them. In case the bot attack is fast enough, the plugin will activate antibot mode. Your users that played more than 2 minutes in the server once in the server’s lifetime, will be able to join without doing anything, if a unknown (new) player joins during an attack, he will be able to easily and quickly do a **Google Captcha**, and he will be able to join your server within 10 seconds, as he will get inside the **global BotSentry whitelist.**
+The antibot has been tested with attacks up to 20.000 bots per second in BungeeCord and Spigot and our results have concluded that there were no significant changes in performance or whatsoever. **BotSentry** is since version 9.2 also a **24/7 AntiVPN and AntiProxy** plugin, this also gives the possibility of blocking certain users from specific countries, continents and/or providers.​
+
+    ## Netty and Bad-packet attacks
+    We have carefully found a way to stop the really popular and new attack methods, usually called "**Bad-packet Attack**", those attacks consist of sending garbage to your server (not real bots), so the BungeeCord and Spigot sends and logs an ugly exception, this, plus the fact that the attack can be fast, can generate up to 3.000 exceptions per second.
+BotSentry will **prevent** this type of attacks without even blacklisting the IPs that send those packets and exploits. This feature has been strongly tested to be able to afirm that we are the **only Antibot fixing this type of bot-attacks** out there.
+You can attack our official test server, its IP is down this page, sending all type of attacks. Take in consideration that stopping unexpected packets is more different than stopping really huge packets, those packets cannot be handled through a plugin, but the chance your server will suffer a really huge packets attack with a strong power are minimal, as these attacks are offered by some booting websites with really low power, and paid plans, so there’s a really little chance your server will receive such attacks. In case you suffer from those attacks, you will be able to mitigate them with TCPShield or Velocity.​
+
+    ## Firewall & mitigation speed
+    After a long **research** of possible checks to ban the most number of bots in as little time as possible, we **achieved what all other Antibots are dreaming of achieving.** Our actual blacklisting system is capable of mitigating a **very strong attack in less than ten seconds without any lags or delays.** With our **internal blacklisting** system, you will never notice when an attack is going on. You can configurate which system command the plugin will execute when blacklisting/unblacklisting an IP. By default, BotSentry will not use this internal blacklisting feature, as most of the servers are running inside containers and are not able to execute commands in the system. You can enable this in the **config** file.​
+
+    ## Help new users joining during bot attacks
+   Are you **tired of trying to join** a Minecraft Server that is being bot attacked **and seeing a message like "Hey, we are being bot-attacked, wait a few minutes to join",** or you try to join and it blacklists you like if you were a bot, but you are not? Then, you came to the right place.
+Although BotSentry will **blacklist the 99% of the attacking IPs in the first 10 seconds of attack,** during the few seconds of lockdown, the user will be able to whitelist himself by completing a **cool Google Captcha,** of course, **hosted by us.**
+https://cyberdevelopment.es/BotSentry/verify/
+We suggest you making a subdomain pointing to the URL, like we did with (https://notbot.es) to make it easier for your users to verify themselves, or you can simply use a URL shortener.
+Most probably you will want to customize that website to give it your personal look, then, we also offer you the option to do so, you can customize the website very easily and keep it still hosted by us.
+You can configurate the look of the website and generate a custom large link here:
+https://cyberdevelopment.es/BotSentry/verify/custom/ 
+
+  ## Features
+   - Unique and exclusive checks
+   - Netty and Bad-Packets attack prevention
+   - Internal bans to blacklist IPs through the system directly
+   - Multiple BungeeCord (Redis) instances support
+   - Bedrock nicknames support (must touch config, allowed characters)
+   - MySQL support
+   - Support for Velocity Proxy
+   - Really smart % system to differentiate between players and bots
+   - 100% configurable and translatable in all aspects
+   - 100% configurable and translatable in all aspects
+   - **NEW!** Forcing specific IPs and usernames to be always whitelisted
+
+   ## Commands and Permissions
+   ### Main Command for botsentry
+   ```
+   /botsentry
+   ```
+   ```
+   /bs
+   ```
+
+   ### Subcommands
+    | Command         | Description                                      |
+    |-----------------|--------------------------------------------------|
+    | `accounts`      | Shows all IPs with players                       |
+    | `apipassword`   | Sets the API password                            |
+    | `blacklist`     | Manages the blacklist                            |
+    | `discord`       | Gives the plugin’s Discord’s link                |
+    | `help`          | Shows a menu with the list of commands           |
+    | `kick`          | Kicks all/some players with the given criterion  |
+    | `language`      | List and download a different language for BotSentry |
+    | `notifications` | Toggles ActionBar notifications                  |
+    | `off`           | Deactivates AntiBot Mode manually                |
+    | `on`            | Activates AntiBot Mode manually                  |
+    | `reload`        | Reloads all values from the config file          |
+    | `scan`          | Gives data about the given IP                    |
+    | `stats`         | Sends the current plugin statistics              |
+    | `whitelist`     | Manages the whitelists                           |
+
+
+    ## Developer API
+    Are you a **Developer** and you want to make custom implementations to our plugin? We built a really **cool and extensive API** so you can make everything that is inside your mind!!
+
+    ### How to get an API Password?
+    You can set an API Password by running ```/bs apipassword {pswd}``` in your server to set a password
+
+    ### How to get your server IP-PORT?
+    You can see your server IP-PORT by doing the command ```/bs stats``` in your server
+
+    ### How many requests can i make to your API?
+    Our API is limited by defaut to **1 request every 1 second per IP.** If you need more requests, you can contact us in Discord to raise that limit.
+
+    You can find all the Public Web API Queries and their specifications [here](https://cyberdevelopment.es/BotSentry/publicapi/request.php)
+
+    Extra table with the most blacklisted countries and the quantity of IPs blacklisted of it:
+    https://cyberdevelopment.es/BotSentry/publicapi/countries.php​
+
+
+   *Credits: https://www.spigotmc.org/resources/%E2%9A%A1-botsentry-%E2%9A%A1-antibot-antiproxy-resisting-30k-bots-per-second-bungee-spigot-sponge-velocity.55924/*
+  </TabsContent>
+  <TabsContent value="download">
+    Tested Minecraft versions: **1.8** - **1.20.1**<br/>
+    Current Version: **9.6.1**<br/>
+    Cracked by: **shayaa**<br/>
+    Download via [GoFile](https://store8.gofile.io/download/web/4a981523-2098-41c0-8f33-7611ae5d90a5/BotSentry-9.6.1.jar)
+  </TabsContent>
+</Tabs>
