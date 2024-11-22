@@ -18,6 +18,14 @@ export const ROUTES: EachRoute[] = [
       { title: "Installing Mods", href: "/mods" },
     ],
   },
+  {
+    title: "Plugins",
+    href: "/plugins",
+    noLink: true,
+    items: [
+      { title: "BotSentry", href: "/botsentry" },
+    ],
+  }
 ];
 
 type Page = { title: string; href: string };
