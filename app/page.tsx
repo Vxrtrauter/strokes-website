@@ -36,7 +36,7 @@ export default function Home() {
           href="https://discord.gg/mxXj4Qj34P"
           target="_blank"
           className={buttonVariants({
-            size: "lg",
+            size: "lg",variant: "outline",
           })}
         >
           Discord
